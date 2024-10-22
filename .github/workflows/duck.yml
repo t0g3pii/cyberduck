@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Sanitize Version
         run: |
-          export VERSION=${GITHUB_REF#refs/tags/release-}
-          export VERSION=${VERSION//-/.}
+          SET VERSION=${GITHUB_REF#refs/tags/release-}
+          SET VERSION=${VERSION//-/.}
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - uses: actions/checkout@v4
       - name: Set up JDK 17
